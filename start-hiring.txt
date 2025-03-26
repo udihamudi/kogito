@@ -1,0 +1,4 @@
+Invoke-RestMethod -Uri "http://localhost:8080/hiring" `
+  -Method Post `
+  -Headers @{ "Content-Type" = "application/json"; "Accept" = "application/json" } `
+  -Body '{"candidateData": { "name": "Jon", "lastName": "Snow", "email": "jon@snow.org", "experience": 5, "skills": ["Java", "Kogito", "Fencing"]}}'

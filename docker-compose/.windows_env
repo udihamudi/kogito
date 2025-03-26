@@ -1,0 +1,6 @@
+PROJECT_VERSION=[[1;31mERROR[m] Error executing Maven.
+[[1;31mERROR[m] The specified user settings file does not exist: /mnt/c/udi/kie-tools/examples/process-compact-architecture/C:\udi\kie-tools\packages\maven-base\settings.xml
+KOGITO_MANAGEMENT_CONSOLE_IMAGE=[[1;31mERROR[m] Error executing Maven.
+[[1;31mERROR[m] The specified user settings file does not exist: /mnt/c/udi/kie-tools/examples/process-compact-architecture/C:\udi\kie-tools\packages\maven-base\settings.xml
+COMPOSE_PROFILES='full'
+DOCKER_GATEWAY_HOST=172.17.0.1

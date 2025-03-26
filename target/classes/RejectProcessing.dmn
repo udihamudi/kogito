@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kie.apache.org/dmn/_42E18B21-84C5-45D2-8F6C-79B4D2B99CDC" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_789FC0B3-3A81-45C1-984E-CC7695F32D2A" name="Reject Processing" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kie.apache.org/dmn/_42E18B21-84C5-45D2-8F6C-79B4D2B99CDC">
+  <dmn:extensionElements/>
+  <dmn:itemDefinition id="_7756ACB4-FEB6-49D7-B86E-054C47CF9B48" name="tRejectProcessResult" isCollection="false">
+    <dmn:itemComponent id="_C3ECEB92-38AD-49CD-A728-A79F0F7CC2E1" name="Salary" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_E6689277-BA19-490B-96DB-5E1094992824" name="Category" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_5F0E1FC3-17BF-4D90-899E-30A925B1970F" name="tRejectInputData" isCollection="false">
+    <dmn:itemComponent id="_5EB42267-BECA-4DBB-A0F6-0092C4A73C2A" name="Name" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_D71C12DD-CA3C-4018-85DC-F002A0F4BAFB" name="LastName" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_DAACFE7E-A8DD-4416-801F-833F160ED7F6" name="email" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_2AA3A190-1768-47F5-A641-16BA078C9CA2" name="extr_client_id" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:decision id="_7A52E482-A857-46E7-88CB-FAB3E3DA43EB" name="RejectProcessResult">
+    <dmn:extensionElements/>
+    <dmn:variable id="_1B8E8707-5237-4243-BE9A-E58E639118F1" name="RejectProcessResult" typeRef="tRejectProcessResult"/>
+    <dmn:context id="_24C69EB2-C761-47AA-BDF5-F6A9B2A257C0">
+      <dmn:contextEntry>
+        <dmn:variable id="_BCE60ABE-E8A1-4AE2-81CA-DFDE03B6F434" name="RejectProcessResult" typeRef="tRejectProcessResult"/>
+        <dmn:decisionTable id="_02D9A785-8FBD-4BDF-AA63-2E6B19D6B3FA" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+          <dmn:input id="_3E3860BE-BB16-40EB-85AE-80A5145BC505">
+            <dmn:inputExpression typeRef="number">
+              <dmn:text>RejectInputData.extr_client_id</dmn:text>
+            </dmn:inputExpression>
+          </dmn:input>
+          <dmn:output id="_6DF78CCE-F325-4F43-8B2E-267D05300788" name="category" typeRef="string"/>
+          <dmn:output id="_D890AD97-140D-488C-AAD8-F80A2E63D362" name="status" typeRef="number"/>
+          <dmn:annotation name="annotation-1"/>
+          <dmn:rule id="_86DD9EA0-F87B-4BCB-957A-BF30D16C7E02">
+            <dmn:inputEntry id="_829D4B2A-A9EC-4602-987E-B0410B7E0862">
+              <dmn:text>&lt;10</dmn:text>
+            </dmn:inputEntry>
+            <dmn:outputEntry id="_6E7EC445-CAFD-4876-B50F-B42050591523">
+              <dmn:text>"Please resolve name"</dmn:text>
+            </dmn:outputEntry>
+            <dmn:outputEntry id="_9EB48D8E-52B8-4442-A826-AA3B5A0B3737">
+              <dmn:text>100</dmn:text>
+            </dmn:outputEntry>
+            <dmn:annotationEntry>
+              <dmn:text/>
+            </dmn:annotationEntry>
+          </dmn:rule>
+          <dmn:rule id="_C2CF26CC-39AA-4019-B1C2-5D8D4A672A8A">
+            <dmn:inputEntry id="_3F19A950-692F-472C-8968-182252BDFB0B">
+              <dmn:text>&gt;=10</dmn:text>
+            </dmn:inputEntry>
+            <dmn:outputEntry id="_FA5D4A2D-8271-4F04-9466-B65864C06DC3">
+              <dmn:text>"Please resolve status"</dmn:text>
+            </dmn:outputEntry>
+            <dmn:outputEntry id="_67B08AD0-D5B3-4390-8F30-FDC80E666AA3">
+              <dmn:text>100</dmn:text>
+            </dmn:outputEntry>
+            <dmn:annotationEntry>
+              <dmn:text/>
+            </dmn:annotationEntry>
+          </dmn:rule>
+        </dmn:decisionTable>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:literalExpression id="_BE89FA47-9C6A-4466-91AA-79E66F29CFAD">
+          <dmn:text>RejectProcessResult</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+    </dmn:context>
+  </dmn:decision>
+  <dmn:inputData id="_6557B6EC-977A-4EAA-9BB4-865C3ACC075F" name="RejectInputData">
+    <dmn:extensionElements/>
+    <dmn:variable id="_2EDADC77-2545-4948-BEEB-5BA75127590F" name="RejectInputData" typeRef="tRejectInputData"/>
+  </dmn:inputData>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_87023BD0-8008-4B71-B4A7-E117FA1BC5D0" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_24C69EB2-C761-47AA-BDF5-F6A9B2A257C0">
+            <kie:width>50</kie:width>
+            <kie:width>203</kie:width>
+            <kie:width>783</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_02D9A785-8FBD-4BDF-AA63-2E6B19D6B3FA">
+            <kie:width>50</kie:width>
+            <kie:width>229</kie:width>
+            <kie:width>226</kie:width>
+            <kie:width>158</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_BE89FA47-9C6A-4466-91AA-79E66F29CFAD">
+            <kie:width>783</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_7A52E482-A857-46E7-88CB-FAB3E3DA43EB" dmnElementRef="_7A52E482-A857-46E7-88CB-FAB3E3DA43EB" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="440" y="149" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_6557B6EC-977A-4EAA-9BB4-865C3ACC075F" dmnElementRef="_6557B6EC-977A-4EAA-9BB4-865C3ACC075F" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="439" y="313" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
