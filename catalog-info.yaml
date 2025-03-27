@@ -7,11 +7,11 @@ metadata:
     github.com/project-slug: udihamudi/kogito
   tags:
     - kogito
-  viewUrl: "https://github.com/udihamudi/kogito"
+  viewUrl: https://github.com/udihamudi/kogito
 spec:
   type: service
   lifecycle: production
   owner: team-x
   dependsOn: []
   repository: https://github.com/udihamudi/kogito
-  scm: "https://github.com/udihamudi/kogito"
+  scm: https://github.com/udihamudi/kogito
