@@ -13,3 +13,4 @@ spec:
   owner: team-x
   dependsOn: []
   repository: https://github.com/udihamudi/kogito
+  scm: "https://github.com/udihamudi/kogito"
