@@ -12,5 +12,4 @@ spec:
   lifecycle: production
   owner: team-x
   dependsOn: []
-  subcomponentOf: null
   repository: https://github.com/udihamudi/kogito
