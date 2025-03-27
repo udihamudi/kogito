@@ -5,6 +5,7 @@ metadata:
   description: Kogito Spring Boot Application
   annotations:
     github.com/project-slug: udihamudi/kogito
+    backstage.io/source-location: url:https://github.com/udihamudi/kogito
   tags:
     - kogito
   viewUrl: https://github.com/udihamudi/kogito
