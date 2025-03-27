@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: team-x
+  description: The team responsible for the Kogito project
+spec:
+  type: team
+  profile:
+    displayName: Team X
+  children: []
+  members: []
