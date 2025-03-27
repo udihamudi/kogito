@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: kogito
+  description: Kogito Spring Boot Application
+  annotations:
+    github.com/project-slug: udihamudi/kogito
+spec:
+  type: service
+  lifecycle: production
+  owner: team-x
