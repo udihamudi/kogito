@@ -5,7 +5,12 @@ metadata:
   description: Kogito Spring Boot Application
   annotations:
     github.com/project-slug: udihamudi/kogito
+  tags:
+    - kogito
 spec:
   type: service
   lifecycle: production
   owner: team-x
+  dependsOn: []
+  subcomponentOf: null
+  repository: https://github.com/udihamudi/kogito
