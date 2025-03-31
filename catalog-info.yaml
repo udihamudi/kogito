@@ -12,7 +12,7 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: team-x
+  owner: guests
   dependsOn: []
   repository: https://github.com/udihamudi/kogito
   scm: https://github.com/udihamudi/kogito
